@@ -1,9 +1,9 @@
 [project]
-name = "titanic_ml"
-description = "titanic_ml example package"
-version = "0.1.0"
+name = "term_erm"
+description = "Terminal and bash editor."
+version = "0.0.1"
 authors = [
-    { name = "Niels Zeilemaker", email = "nielszeilemaker@godatadriven.com" }
+    { name = "George Williams ", email = "ventshek@gmail.com" }
 ]
 dependencies = [
     "pyspark[ml]",
@@ -18,5 +18,5 @@ dev = [
 ]
 
 [build-system]
-build-backend = "flit_core.buildapi"
-requires = ["flit_core >=3.2,<4"]
+# build-backend = "flit_core.buildapi"
+# requires = ["flit_core >=3.2,<4"]
