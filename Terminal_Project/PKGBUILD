@@ -30,12 +30,12 @@ _name=${pkgname#python-}
 # }
 
 build() {
-    cd /home/user/test/src/Grand-Unified-Bash-Catalogue/Terminal_Project
+    cd /home/user/Grand-Unified-Bash-Catalogue/Terminal_Project
     python -m build --wheel --no-isolation
 }
 
 package() {
-    cd /home/user/test/src/Grand-Unified-Bash-Catalogue/Terminal_Project
+    cd /home/user/Grand-Unified-Bash-Catalogue/Terminal_Project
     python -m installer --destdir="$pkgdir" dist/*.whl
 }
 
