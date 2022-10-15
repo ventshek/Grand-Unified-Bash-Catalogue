@@ -5,30 +5,29 @@ pkgrel=1
 #epoch=
 pkgdesc="Terminal and bash editor."
 arch=(x86_64)
-url=""
+url="https://github.com/ventshek/Grand-Unified-Bash-Catalogue.git"
 license=('GPL')
 #groups=()
-depends=()
-makedepends=()
-checkdepends=()
-optdepends=()
-provides=()
-conflicts=()
-replaces=()
-backup=()
-options=()
-install=
-changelog=
-source=("$pkgname-$pkgver.tar.gz"
-        "$pkgname-$pkgver.patch")
-noextract=()
-md5sums=()
-validpgpkeys=()
+depends=(python gtk nuitka vte3)
+makedepends=(git make)
+#checkdepends=()
+#optdepends=()
+#provides=()
+#conflicts=()
+#replaces=()
+#backup=()
+#options=()
+#install=
+#changelog=
+source=("git+$url")
+#noextract=()
+md5sums=('SKIP')
+#validpgpkeys=()
 
-prepare() {
-        cd "$pkgname-$pkgver"
-        patch -p1 -i "$srcdir/$pkgname-$pkgver.patch"
-}
+# prepare() {
+#         cd "$pkgname-$pkgver"
+#         patch -p1 -i "$srcdir/$pkgname-$pkgver.patch"
+# }
 
 build() {
         cd "$pkgname-$pkgver"
@@ -45,3 +44,4 @@ package() {
         cd "$pkgname-$pkgver"
         make DESTDIR="$pkgdir/" install
 }
+py -m nuitka --show-scons --show-progress --onefile --remove-output --warn-implicit-exceptions --warn-unusual-code --disable-console --linux-onefile main.py
