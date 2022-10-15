@@ -5,7 +5,7 @@ pkgrel=1
 #epoch=
 pkgdesc="Terminal and bash editor."
 arch=(x86_64)
-url="https://github.com/ventshek/Grand-Unified-Bash-Catalogue.git"
+url="https://github.com/ventshek/term_erm.git"
 license=('GPL')
 #groups=()
 depends=(python gtk3 vte3)
@@ -30,12 +30,12 @@ _name=${pkgname#python-}
 # }
 
 build() {
-    cd /home/user/Grand-Unified-Bash-Catalogue/Terminal_Project
+    cd /home/user/term_erm
     python -m build --wheel --no-isolation
 }
 
 package() {
-    cd /home/user/Grand-Unified-Bash-Catalogue/Terminal_Project
+    cd /home/user/term_erm
     python -m installer --destdir="$pkgdir" dist/*.whl
 }
 
